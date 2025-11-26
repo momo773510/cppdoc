@@ -36,6 +36,12 @@ export default defineConfig({
           autogenerate: { directory: "c/library" },
         },
       ],
+      locales: {
+        root: {
+          label: "English",
+          lang: "en",
+        }
+      },
       plugins: [
         starlightAutoSidebar(),
         starlightContextualMenu({
