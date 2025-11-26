@@ -6,7 +6,7 @@ export type CppRevision =
   | "C++20"
   | "C++23"
   | "C++26";
-export type CRevision = "C89" | "C99" | "C11" | "C17" | "C23";
+export type CRevision = "C89" | "C95" | "C99" | "C11" | "C17" | "C23" | "C29";
 export type CxxRevision = CppRevision | CRevision;
 
 export type DRKind = "cwg" | "lwg";

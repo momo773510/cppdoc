@@ -40,7 +40,7 @@ export default defineConfig({
         root: {
           label: "English",
           lang: "en",
-        }
+        },
       },
       plugins: [
         starlightAutoSidebar(),

@@ -1,0 +1,281 @@
+---
+title: Overview
+order: 1
+---
+
+import FeatureTestMacro, {
+  FeatureTestMacroValue
+} from "@components/FeatureTestMacro.astro";
+import Missing from "@components/Missing.astro";
+import Revision from "@components/Revision.astro";
+
+The interface of C standard library is defined by the following collection of headers.
+
+<dl>
+  <dt><Missing>`<assert.h>`</Missing></dt>
+  <dd>Conditionally compiled macro that compares its argument to zero</dd>
+
+  <dt><Revision noborder since="C99"><Missing>`<complex.h>`</Missing></Revision></dt>
+  <dd>Complex number arithmetic</dd>
+
+  <dt><Missing>`<ctype.h>`</Missing></dt>
+  <dd>Functions to determine the type contained in character data</dd>
+
+  <dt><Missing>`<errno.h>`</Missing></dt>
+  <dd>Macros reporting error conditions</dd>
+
+  <dt><Revision noborder since="C99"><Missing>`<fenv.h>`</Missing></Revision></dt>
+  <dd>Floating-point environment</dd>
+
+  <dt><Missing>`<float.h>`</Missing></dt>
+  <dd>Limits of floating-point types</dd>
+
+  <dt><Revision noborder since="C99"><Missing>`<inttypes.h>`</Missing></Revision></dt>
+  <dd>Format conversion of integer types</dd>
+
+  <dt><Revision noborder since="C95"><Missing>`<iso646.h>`</Missing></Revision></dt>
+  <dd>Alternative operator spellings</dd>
+
+  <dt><Missing>`<limits.h>`</Missing></dt>
+  <dd>Ranges of integer types</dd>
+
+  <dt><Missing>`<locale.h>`</Missing></dt>
+  <dd>Localization utilities</dd>
+
+  <dt><Missing>`<math.h>`</Missing></dt>
+  <dd>Common mathematics functions</dd>
+
+  <dt><Missing>`<setjmp.h>`</Missing></dt>
+  <dd>Nonlocal jumps</dd>
+
+  <dt><Missing>`<signal.h>`</Missing></dt>
+  <dd>Signal handling</dd>
+
+  <dt>
+    <Revision
+      noborder
+      since="C11"
+      traits={[ { trait: "deprecated", since: "C23" } ]}
+    >
+      <Missing>`<signal.h>`</Missing>
+    </Revision>
+  </dt>
+  <dd>alignas and alignof convenience macros</dd>
+
+  <dt><Missing>`<stdarg.h>`</Missing></dt>
+  <dd>Variable arguments</dd>
+
+  <dt><Revision noborder since="C11"><Missing>`<stdatomic.h>`</Missing></Revision></dt>
+  <dd>Atomic operations</dd>
+
+  <dt><Revision noborder since="C23"><Missing>`<stdbit.h>`</Missing></Revision></dt>
+  <dd>Macros to work with the byte and bit representations of types</dd>
+
+  <dt>
+    <Revision
+      noborder
+      since="C99"
+      traits={[ { trait: "deprecated", since: "C23" } ]}
+    >
+      <Missing>`<stdbool.h>`</Missing>
+    </Revision>
+  </dt>
+  <dd>Macros for boolean type</dd>
+
+  <dt><Revision noborder since="C23"><Missing>`<stdckdint.h>`</Missing></Revision></dt>
+  <dd>Macros for performing checked integer arithmetic</dd>
+
+  <dt><Missing>`<stddef.h>`</Missing></dt>
+  <dd>Common macro definitions</dd>
+
+  <dt><Revision noborder since="C99"><Missing>`<stdint.h>`</Missing></Revision></dt>
+  <dd>Fixed-width integer types</dd>
+
+  <dt><Missing>`<stdio.h>`</Missing></dt>
+  <dd>Input/output</dd>
+
+  <dt><Missing>`<stdlib.h>`</Missing></dt>
+  <dd>General utilities: <Missing>memory management</Missing>, <Missing>program utilities</Missing>, <Missing>string conversions</Missing>, <Missing>random numbers</Missing>, <Missing>algorithms</Missing></dd>
+
+  <dt><Revision noborder since="C29"><Missing>`<stdmchar.h>`</Missing></Revision></dt>
+  <dd>Text transcode</dd>
+
+  <dt>
+    <Revision
+      noborder
+      since="C11"
+      traits={[ { trait: "deprecated", since: "C23" } ]}
+    >
+      <Missing>`<stdnoreturn.h>`</Missing>
+    </Revision>
+  </dt>
+  <dd><Missing>noreturn</Missing> convenience macro</dd>
+
+  <dt><Missing>`<string.h>`</Missing></dt>
+  <dd>String handling</dd>
+
+  <dt><Revision noborder since="C99"><Missing>`<tgmath.h>`</Missing></Revision></dt>
+  <dd>Type-generic math (macros wrapping <Missing>`<math.h>`</Missing> and <Missing>`<complex.h>`</Missing>)</dd>
+
+  <dt><Revision noborder since="C11"><Missing>`<threads.h>`</Missing></Revision></dt>
+  <dd>Thread library</dd>
+
+  <dt><Missing>`<time.h>`</Missing></dt>
+  <dd>Time/date utilities</dd>
+
+  <dt><Revision noborder since="C11"><Missing>`<uchar.h>`</Missing></Revision></dt>
+  <dd>UTF-16 and UTF-32 character utilities</dd>
+
+  <dt><Revision noborder since="C95"><Missing>`<wchar.h>`</Missing></Revision></dt>
+  <dd>Extended multibyte and wide character utilities</dd>
+
+  <dt><Revision noborder since="C95"><Missing>`<wctype.h>`</Missing></Revision></dt>
+  <dd>Functions to determine the type contained in wide character data</dd>
+</dl>
+
+## Feature test macros :badge[C23]
+
+<FeatureTestMacro name="__STDC_VERSION_ASSERT_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<assert.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_COMPLEX_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<complex.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_FENV_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<fenv.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_FLOAT_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<float.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_INTTYPES_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<inttypes.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_LIMITS_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<limits.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_MATH_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<math.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_SETJMP_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<setjmp.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDARG_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdarg.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDATOMIC_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdatomic.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDBIT_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdbit.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDCKDINT_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdckdint.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDDEF_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stddef.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDINT_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdint.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDIO_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdio.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDLIB_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdlib.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STDMCHAR_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<stdmchar.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_STRING_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<string.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_TGMATH_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<tgmath.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_TIME_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<time.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_UCHAR_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<uchar.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+<FeatureTestMacro name="__STDC_VERSION_WCHAR_H__">
+  <FeatureTestMacroValue value="202311L" since="C23">
+    <Missing>`<wchar.h>`</Missing>
+  </FeatureTestMacroValue>
+</FeatureTestMacro>
+
+## References
+
+- C23 standard (ISO/IEC 9899:2024):
+  - 7.1.2 Standard headers (p: 191-192)
+- C17 standard (ISO/IEC 9899:2018):
+  - 7.1.2 Standard headers (p: 131-132)
+- C11 standard (ISO/IEC 9899:2011):
+  - 7.1.2 Standard headers (p: 181-182)
+- C99 standard (ISO/IEC 9899:1999):
+  - 7.1.2 Standard headers (p: 165)
+- C89/C90 standard (ISO/IEC 9899:1990):
+  - 4.1.2 Standard headers

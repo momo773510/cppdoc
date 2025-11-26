@@ -1,29 +1,24 @@
 ---
-import type { CRevision, CppRevision } from "@src/types";
+import type { RevisionInfo } from "./revision/types";
+import RevisionTags from "./revision/RevisionTags.astro";
 
-interface Props {
-  noBorder?: boolean;
-  since?: CRevision | CppRevision;
-  until?: CRevision | CppRevision;
+interface Props extends RevisionInfo {
+  noborder?: boolean;
 }
 
-const { noBorder, since, until } = Astro.props;
+const { noborder } = Astro.props;
 ---
 
-<span class={`revision ${noBorder ? '' : 'border'}`}>
+<span class:list={["revision", { noborder }]}>
   <slot />
-  {since && <span class="revision-tag"> (since {since})</span>}
-  {until && <span class="revision-tag"> (until {until})</span>}
+  <RevisionTags as="span" {...Astro.props} />
 </span>
 
 <style>
-  .revision {
+  .revision:not(.noborder) {
+    border: 1px solid var(--sl-color-gray-4);
     padding: 2px;
     border-radius: 4px;
-  }
-
-  .revision.border {
-    border: 1px solid var(--sl-color-gray-4);
   }
 
   .revision > .revision-tag {

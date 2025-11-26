@@ -6,7 +6,7 @@ import Code from "@astrojs/starlight/components";
 
 import Behavior from "@components/Behavior.astro";
 import DeclDoc from "@components/DeclDoc.astro";
-import DR from "@components/DR.astro";
+import DRList, { DR } from "@components/DRList.astro";
 import Missing from "@components/Missing.astro";
 import {
   default as ParamDocList,
@@ -142,38 +142,40 @@ argv[3] == 0
 
 The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
 
-<DR kind="cwg" id={1003} std="C++98">
-  <Fragment slot="behavior-published">
-    supported parameter names of `main` were overly restricted
-  </Fragment>
-  <Fragment slot="correct-behavior">
-    all valid parameter names are supported
-  </Fragment>
-</DR>
+<DRList>
+  <DR kind="cwg" id={1003} std="C++98">
+    <Fragment slot="behavior-published">
+      supported parameter names of `main` were overly restricted
+    </Fragment>
+    <Fragment slot="correct-behavior">
+      all valid parameter names are supported
+    </Fragment>
+  </DR>
 
-<DR kind="cwg" id={1886} std="C++98">
-  <Fragment slot="behavior-published">
-    the `main` function could be declared with a language linkage
-  </Fragment>
-  <Fragment slot="correct-behavior">
-    prohibited
-  </Fragment>
-</DR>
+  <DR kind="cwg" id={1886} std="C++98">
+    <Fragment slot="behavior-published">
+      the `main` function could be declared with a language linkage
+    </Fragment>
+    <Fragment slot="correct-behavior">
+      prohibited
+    </Fragment>
+  </DR>
 
-<DR kind="cwg" id={2479} std="C++20">
-  <Fragment slot="behavior-published">
-    the `main` function could be declared `consteval`
-  </Fragment>
-  <Fragment slot="correct-behavior">
-    prohibited
-  </Fragment>
-</DR>
+  <DR kind="cwg" id={2479} std="C++20">
+    <Fragment slot="behavior-published">
+      the `main` function could be declared `consteval`
+    </Fragment>
+    <Fragment slot="correct-behavior">
+      prohibited
+    </Fragment>
+  </DR>
 
-<DR kind="cwg" id={2811} std="C++98">
-  <Fragment slot="behavior-published">
-    whether the `main` function is used after <WG21PaperLink paper="N3214" /> was unclear
-  </Fragment>
-  <Fragment slot="correct-behavior">
-    it is considered used when named
-  </Fragment>
-</DR>
+  <DR kind="cwg" id={2811} std="C++98">
+    <Fragment slot="behavior-published">
+      whether the `main` function is used after <WG21PaperLink paper="N3214" /> was unclear
+    </Fragment>
+    <Fragment slot="correct-behavior">
+      it is considered used when named
+    </Fragment>
+  </DR>
+</DRList>
