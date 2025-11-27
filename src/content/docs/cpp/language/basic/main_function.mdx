@@ -8,13 +8,10 @@ import Code from "@astrojs/starlight/components";
 
 import Behavior from "@components/Behavior.astro";
 import DeclDoc from "@components/DeclDoc.astro";
-import DRList, { DR } from "@components/DRList.astro";
+import { DR, DRList } from "@components/defect-report";
 import Missing from "@components/Missing.astro";
-import {
-  default as ParamDocList,
-  ParamDoc
-} from "@components/ParamDocList.astro"
-import Revision from "@components/Revision.astro";
+import { ParamDoc, ParamDocList } from "@components/param-doc";
+import { Revision } from "@components/revision";
 import WG21PaperLink from "@components/WG21PaperLink.astro";
 
 A program shall contain a global namespace function named `main`, which is the designated start of the program in hosted environment. It shall have one of the following forms:

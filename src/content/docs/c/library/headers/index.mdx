@@ -5,12 +5,13 @@ cppdoc:
   keys: ["c.library.headers"]
 ---
 
-import CHeader from "@components/CHeader.astro";
-import FeatureTestMacro, {
-  FeatureTestMacroValue
-} from "@components/FeatureTestMacro.astro";
+import { CHeader } from "@components/header";
+import {
+  FeatureTestMacro,
+  FeatureTestMacroValue,
+} from "@components/feature-test-macro";
 import Missing from "@components/Missing.astro";
-import Revision from "@components/Revision.astro";
+import { Revision } from "@components/revision";
 
 The interface of C standard library is defined by the following collection of headers.
 

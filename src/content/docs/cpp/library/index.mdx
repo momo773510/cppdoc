@@ -8,15 +8,15 @@ cppdoc:
 import { Card } from "@astrojs/starlight/components";
 
 import Behavior from "@components/Behavior.astro";
-import CppHeader from "@components/CppHeader.astro";
-import DRList, { DR } from "@components/DRList.astro";
-import FeatureTestMacro, {
+import { CppHeader } from "@components/header";
+import { DR, DRList } from "@components/defect-report";
+import {
+  FeatureTestMacro,
   FeatureTestMacroValue,
-} from "@components/FeatureTestMacro.astro";
+} from "@components/feature-test-macro";
 import FlexTable from "@components/FlexTable.astro";
 import Missing from "@components/Missing.astro";
-import Revision from "@components/Revision.astro";
-import RevisionBlock from "@components/RevisionBlock.astro";
+import { Revision, RevisionBlock } from "@components/revision";
 
 The C++ standard library provides a wide range of facilities that are usable in standard C++.
 
