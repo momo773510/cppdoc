@@ -1,28 +1,29 @@
 ---
-import type { RevisionInfo } from "./types";
+import type { RevisionRange } from "@src/types";
 import RevisionTags from "./RevisionTags.astro";
+import { autoRev } from "./autorev";
 
-interface Props extends RevisionInfo {
+interface Props extends RevisionRange {
   noborder?: boolean;
 }
 
-const { noborder } = Astro.props;
+const { noborder, since, until } = Astro.props;
 ---
 
-<span class:list={["revision", { noborder }]}>
+<span
+  class:list={["revision-span", { noborder }]}
+  {...autoRev({ autorevSince: since, autorevUntil: until })}
+>
   <slot />
-  <RevisionTags as="span" {...Astro.props} />
+  <span class="revision-tags">
+    <RevisionTags as="span" {...Astro.props} />
+  </span>
 </span>
 
 <style>
-  .revision:not(.noborder) {
+  .revision-span:not(.noborder) {
     border: 1px solid var(--sl-color-gray-4);
     padding: 2px;
     border-radius: 4px;
-  }
-
-  .revision > .revision-tag {
-    font-size: var(--cppdoc-font-size-revision);
-    color: var(--cppdoc-color-revision);
   }
 </style>

@@ -7,7 +7,7 @@ cppdoc:
 import Behavior from "@components/Behavior.astro";
 import { CHeader } from "@components/header";
 import { Decl, DeclDoc } from "@components/decl-doc";
-import { Desc, DescItem, DescList } from "@src/components/desc-list";
+import { Desc, DescItem, DescList } from "@components/desc-list";
 import Missing from "@components/Missing.astro";
 import { ParamDoc, ParamDocList } from "@components/param-doc";
 import { Revision, RevisionBlock } from "@components/revision";
@@ -36,7 +36,7 @@ Defined in header <CHeader name="string" />.
   The behavior is <Behavior kind="undef">undefined</Behavior> if access occurs beyond the end of the dest array. If the objects overlap <Revision since="C99">(which is a violation of the `restrict` contract)</Revision>, the behavior is <Behavior kind="undef">undefined</Behavior>. The behavior is <Behavior kind="undef">undefined</Behavior> if either dest or src is an invalid or null pointer.
 </DeclDoc>
 
-<DeclDoc id={2}>
+<DeclDoc id={2} autorevSince="C11">
   <Decl slot="decl">
     <RevisionBlock since="C11" noborder>
       ```c
@@ -159,9 +159,9 @@ dst = "\0\0\0\0\0yxyxy", r = 22
 ## See also
 
 <DescList>
-  <Desc kind="function">
+  <Desc kind="function" autorevSince="C23">
     <DescItem slot="item">
-      <Revision noborder since="C23"><Missing>`memccpy`</Missing></Revision>
+      <RevisionBlock noborder since="C23" dir="v"><Missing>`memccpy`</Missing></RevisionBlock>
     </DescItem>
     copies one buffer to another, stopping after the specified delimiter
   </Desc>
@@ -170,17 +170,17 @@ dst = "\0\0\0\0\0yxyxy", r = 22
     <DescItem slot="item">
       <Missing>`memmove`</Missing>
     </DescItem>
-    <DescItem slot="item">
+    <DescItem slot="item" autorevSince="C11">
       <RevisionBlock noborder since="C11" dir="v"><Missing>`memmove_s`</Missing></RevisionBlock>
     </DescItem>
     moves one buffer to another
   </Desc>
 
-  <Desc kind="function">
+  <Desc kind="function" autorevSince="C95">
     <DescItem slot="item">
       <RevisionBlock noborder since="C95" dir="v"><Missing>`wmemcpy`</Missing></RevisionBlock>
     </DescItem>
-    <DescItem slot="item">
+    <DescItem slot="item" autorevSince="C11">
       <RevisionBlock noborder since="C11" dir="v"><Missing>`wmemcpy_s`</Missing></RevisionBlock>
     </DescItem>
     copies a certain amount of wide characters between two non-overlapping arrays

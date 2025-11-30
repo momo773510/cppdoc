@@ -1,8 +1,10 @@
 ---
+import { autoRev, type AutorevProps } from "@components/revision";
 
+interface Props extends AutorevProps {}
 ---
 
-<div class="desc-item">
+<div class="desc-item" {...autoRev(Astro.props)}>
   <slot />
 </div>
 

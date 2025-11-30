@@ -1,5 +1,7 @@
 ---
-interface Props {
+import { autoRev, type AutorevProps } from "@components/revision";
+
+interface Props extends AutorevProps {
   kind?: string;
 }
 
@@ -7,7 +9,7 @@ const { kind } = Astro.props;
 const hasKind = kind !== undefined;
 ---
 
-<div class="desc">
+<div class="desc" {...autoRev(Astro.props)}>
   <div class="desc-items">
     <slot name="item" />
   </div>
@@ -26,6 +28,10 @@ const hasKind = kind !== undefined;
     margin: 0;
     padding-top: calc(var(--sl-content-gap-y) * 0.35);
     padding-bottom: calc(var(--sl-content-gap-y) * 0.35);
+  }
+
+  .desc.autorev-hidden {
+    display: none;
   }
 
   .desc > .desc-content {

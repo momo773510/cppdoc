@@ -12,6 +12,13 @@ export const collections = {
         cppdoc: z
           .object({
             keys: z.array(z.string()).optional(),
+            revision: z
+              .object({
+                lang: z.string().optional(),
+                since: z.string().optional(),
+                until: z.string().optional(),
+              })
+              .optional(),
           })
           .optional(),
       }),

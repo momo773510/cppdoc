@@ -38,13 +38,16 @@ export default defineConfig({
         {
           label: "CppDoc Development Guide",
           autogenerate: { directory: "development" },
-        }
+        },
       ],
       locales: {
         root: {
           label: "English",
           lang: "en",
         },
+      },
+      components: {
+        TableOfContents: "./src/components/starlight/TableOfContents.astro",
       },
       plugins: [
         starlightAutoSidebar(),

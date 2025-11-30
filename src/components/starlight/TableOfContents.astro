@@ -1,0 +1,16 @@
+---
+import Default from "starlight-heading-badges/components/HeadingBadgesTableOfContents.astro";
+import RevisionSelector from "../revision/RevisionSelector.astro";
+---
+
+<div class="toc-revision-selector">
+  <RevisionSelector />
+</div>
+
+<Default><slot /></Default>
+
+<style>
+  .toc-revision-selector {
+    margin-bottom: 1em;
+  }
+</style>

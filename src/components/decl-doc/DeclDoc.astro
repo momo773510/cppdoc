@@ -1,7 +1,8 @@
 ---
+import { autoRev, type AutorevProps } from "@components/revision/autorev";
 import AutoCollapse from "../AutoCollapse.astro";
 
-interface Props {
+interface Props extends AutorevProps {
   id?: number;
 }
 
@@ -9,7 +10,7 @@ const { id } = Astro.props;
 const hasId = id !== undefined;
 ---
 
-<div class="decl-doc">
+<div class="decl-doc" {...autoRev(Astro.props)}>
   {hasId ? (
     <div class="decl-id">Declaration #{id}</div>
   ) : <></>}
