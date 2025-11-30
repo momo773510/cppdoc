@@ -1,9 +1,9 @@
 ---
-import type { RevisionRange } from "@src/types";
 import RevisionTags from "./RevisionTags.astro";
 import { autoRev } from "./autorev";
+import type { RevisionInfo } from "./types";
 
-interface Props extends RevisionRange {
+interface Props extends RevisionInfo {
   noborder?: boolean;
 }
 

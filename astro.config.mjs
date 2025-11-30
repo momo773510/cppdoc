@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightUtils from "@lorenzo_lewis/starlight-utils";
 import starlightAutoSidebar from "starlight-auto-sidebar";
-import starlightContextualMenu from "starlight-contextual-menu";
 import starlightHeadingBadges from "starlight-heading-badges";
 
 // https://astro.build/config
@@ -51,9 +50,6 @@ export default defineConfig({
       },
       plugins: [
         starlightAutoSidebar(),
-        starlightContextualMenu({
-          actions: ["chatgpt", "claude", "grok"],
-        }),
         starlightHeadingBadges(),
         starlightUtils({
           multiSidebar: {
