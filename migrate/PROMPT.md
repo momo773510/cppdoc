@@ -9,10 +9,10 @@ You should, based on the current link, change it to: `<DocLink src="/cpp/languag
 ```mdx
 {{LLM_DOCS}}
 ```
-
 ## Note: The above content is all part of the component library examples. Do not confuse it with the actual content that needs to be migrated.
 
 The original content will be provided in the following format:
 // URL: Original page link
 Original page content
-Please proceed with the migration.
+
+5. Remember **NOT** to use ordinary HTML elements, or your answer will be **REJECTED**. USE OUR COMPONENTS.
