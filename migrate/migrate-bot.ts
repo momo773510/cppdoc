@@ -418,10 +418,10 @@ async function main() {
       await writeMDXFile(filePath, mdx, title);
 
       console.log(`  尝试构建...`);
-      const res = spawnSync(`npm`, ["run", "build"], { stdio: "inherit" });
+      const res = spawnSync(`npm`, ["run", "build"], { stdio: "inherit", shell: true });
       if (res.status !== 0) {
         throw new Error(
-          "构建失败，可能生成的MDX有问题：" + res.stderr?.toString() + res.stdout?.toString() + " exit code " + res.status
+          "构建失败，可能生成的MDX有问题：" + res.stderr?.toString() + res.stdout?.toString() + res.error?.toString() + " exit code " + res.status
         );
       }
 
