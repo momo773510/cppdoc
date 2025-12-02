@@ -43,7 +43,7 @@ async function retry(fn, retries = 3, delay = 1000) {
 
 
 function extractLink(title) {
-  const urlRegex = /cppreference\.com\/w\/[^\s]+/g;
+  const urlRegex = /https?:\/\/.*?cppreference\.com\/w\/[^\s]+/g;
   const match = title.match(urlRegex);
   return match ? match[0] : null;
 }
@@ -179,7 +179,7 @@ ${html}
 
 function getLocalPath(url) {
   // https://en.cppreference.com/w/cpp/comments.html -> src/content/docs/cpp/comments.mdx
-  const match = url.match(/cppreference\.com\/w\/(.+)\.html$/);
+  const match = url.match(/https?:\/\/.*?cppreference\.com\/w\/(.+)\.html$/);
   if (!match) {
     throw new Error(`无法从URL解析路径: ${url}`);
   }
