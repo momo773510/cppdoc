@@ -84,11 +84,14 @@ async function fetchPageContent(
   if (!contentElement) {
     throw new Error("Could not find #mw-content-text");
   }
+
+  const title = headingElement?.textContent?.trim() || "";
+
   return {
     html: contentElement.innerHTML,
-    title: headingElement?.textContent?.trim() || "",
+    title,
     url,
-    innerText: (contentElement as HTMLDivElement).innerText,
+    innerText: title + "\n" + (contentElement as HTMLDivElement).innerText,
   };
 }
 
