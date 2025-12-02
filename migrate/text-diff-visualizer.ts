@@ -336,6 +336,6 @@ export function visualizeTextDiff(textA: string, textB: string) {
     prevLineIdx = lineIdx;
   });
 
-  const buffer = canvas.toBuffer('image/webp');
+  const buffer = canvas.toBuffer("image/webp");
   return buffer;
 }
