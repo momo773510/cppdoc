@@ -1,4 +1,4 @@
-import { createCanvas } from "canvas";
+import { createCanvas } from "@napi-rs/canvas";
 
 interface WordToken {
   display: string;
@@ -213,7 +213,7 @@ export function visualizeTextDiff(textA: string, textB: string) {
 
   totalY += config.padding;
 
-  const canvas = createCanvas(config.width, totalY, "svg");
+  const canvas = createCanvas(config.width, totalY);
   const ctx = canvas.getContext("2d");
 
   ctx.fillStyle = COLORS.bg;
@@ -336,13 +336,6 @@ export function visualizeTextDiff(textA: string, textB: string) {
     prevLineIdx = lineIdx;
   });
 
-  const buffer = canvas.toBuffer();
+  const buffer = canvas.toBuffer('image/webp');
   return buffer;
 }
-
-const svg = visualizeTextDiff(
-  "This is a sample text.\nIt has multiple lines.\nSome words are different.",
-  "This is a sample text.\nIt has several lines.\nSome words differ."
-);
-import { writeFileSync } from "fs";
-writeFileSync("text-diff.svg", svg);

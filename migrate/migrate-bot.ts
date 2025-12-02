@@ -254,11 +254,11 @@ description: Auto‑generated from cppreference
 // curl --location --request POST "https://api.imgbb.com/1/upload?expiration=600&key=YOUR_CLIENT_API_KEY" --form "image=R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 async function uploadImageToImgBB(imageBuffer: Buffer): Promise<string> {
   const formData = new FormData();
-  formData.append("image", new Blob([new Uint8Array(imageBuffer)]), "diff.svg");
-  formData.append("name", "diff.svg");
+  formData.append("image", new Blob([new Uint8Array(imageBuffer)]), "diff.webp");
+  formData.append("name", "diff.webp");
 
   const response = await fetch(
-    `https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}&name=diff.svg`,
+    `https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}&name=diff.webp`,
     {
       method: "POST",
       body: formData,
@@ -296,9 +296,9 @@ async function createPullRequest(
 
   let imageUrl = null;
   if (originalInnerText && newInnerText) {
-    const svg = visualizeTextDiff(originalInnerText, newInnerText);
-    if (svg) {
-      imageUrl = await uploadImageToImgBB(svg);
+    const webp = visualizeTextDiff(originalInnerText, newInnerText);
+    if (webp) {
+      imageUrl = await uploadImageToImgBB(webp);
       console.log(`上传文本差异图像到 ImgBB: ${imageUrl}`);
     }
   }
