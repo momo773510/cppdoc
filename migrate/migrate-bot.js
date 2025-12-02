@@ -99,7 +99,13 @@ ${html}
   }
 
   const data = await response.json();
-  return data.choices[0].message.content.trim();
+  const content = data.choices[0].message.content.trim();
+
+  if (content.includes('```mdx')) {
+    return content.replace(/```mdx\s*([\s\S]*?)\s*```/g, "$1").trim();
+  }
+  
+  return content;
 }
 
 function getLocalPath(url) {
@@ -220,24 +226,19 @@ async function main() {
         throw new Error("标题中未找到有效的cppreference链接");
       }
 
-      // 获取页面内容
       console.log(`  获取 ${url}`);
       const { html, title } = await fetchPageContent(url);
 
-      // 转换为MDX
       console.log(`  转换HTML为MDX...`);
       const mdx = await convertToMDX(html, title, url);
 
-      // 写入文件
       const filePath = getLocalPath(url);
       console.log(`  写入 ${filePath}`);
       await writeMDXFile(filePath, mdx, title);
 
-      // 创建PR
       console.log(`  创建PR...`);
       const prNumber = await createPullRequest(issue, filePath, url);
 
-      // 更新issue
       console.log(`  更新issue...`);
       await updateIssue(issue, prNumber);
 
