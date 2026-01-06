@@ -57,19 +57,19 @@ An <DocLink dest="/cpp/language/exceptions">exception</DocLink> can be handled b
   </ParamDoc>
 </ParamDocList>
 
-  The parameter declaration in a handler describes the type(s) of exceptions that can cause that handler to be entered.
+The parameter declaration in a handler describes the type(s) of exceptions that can cause that handler to be entered.
 
-  If the parameter is declared to have one of the following types, the program is ill-formed:
+If the parameter is declared to have one of the following types, the program is ill-formed:
 
-  - an <DocLink dest="/cpp/language/basic_concepts/definition#Incomplete_type">incomplete type</DocLink>
-  - an <DocLink dest="/cpp/language/classes#Abstract_classes">abstract class type</DocLink>
-  - an <DocLink dest="/cpp/language/reference#Rvalue_reference"><Revision since="C++11">rvalue reference type</Revision></DocLink>
-  - a pointer to an incomplete type other than (possibly cv-qualified) `void`
-  - an lvalue reference to an incomplete type
+- an <DocLink dest="/cpp/language/basic_concepts/definition#Incomplete_type">incomplete type</DocLink>
+- an <DocLink dest="/cpp/language/classes#Abstract_classes">abstract class type</DocLink>
+- an <DocLink dest="/cpp/language/reference#Rvalue_reference"><Revision since="C++11">rvalue reference type</Revision></DocLink>
+- a pointer to an incomplete type other than (possibly cv-qualified) `void`
+- an lvalue reference to an incomplete type
 
-  If the parameter is declared to have type “array of `T`” or function type `T`, the type is adjusted to “pointer to `T`”.
+If the parameter is declared to have type “array of `T`” or function type `T`, the type is adjusted to “pointer to `T`”.
 
-  A handler with parameter type `T` can be abbreviated as “a handler of type `T`”.
+A handler with parameter type `T` can be abbreviated as “a handler of type `T`”.
 
 ### Matching exceptions
 
